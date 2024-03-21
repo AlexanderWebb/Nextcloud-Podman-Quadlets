@@ -1,0 +1,7 @@
+[Container]
+Pod=atwebb.dev.pod
+ContainerName=nextcloud-app
+Image=docker.io/library/nextcloud:28-fpm
+Volume=/var/home/atwebb/Containers/nextcloud.atwebb.dev/nextcloud/config:/var/www/html:z
+Volume=/var/home/atwebb/Containers/nextcloud.atwebb.dev/nextcloud/data:/var/www/html/data:z
+EnvironmentFile=nextcloud.env

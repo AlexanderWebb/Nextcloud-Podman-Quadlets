@@ -1,0 +1,14 @@
+# I needed somewhere to run systemd jobs and didn't want to use the host.
+
+[Container]
+Pod=atwebb.dev.pod
+ContainerName=util-fedora
+Image=docker.io/library/fedora:40
+
+Volume=/var/home/atwebb/Containers/nextcloud.atwebb.dev/nextcloud/config:/var/www/html:z
+Volume=/var/home/atwebb/Containers/nextcloud.atwebb.dev/nextcloud/data:/var/www/html/data:z
+
+# Nextcloud cron.php
+Volume=/var/home/atwebb/.config/containers/systemd/nextcloudcron:/etc/systemd/system/nextcloudcron:Z
+
+# TODO: Dynamic DNS service

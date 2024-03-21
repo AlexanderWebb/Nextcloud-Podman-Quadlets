@@ -1,0 +1,17 @@
+[Container]
+Pod=atwebb.dev.pod
+ContainerName=caddy
+
+# Caddyfile (Z=exclusive access)
+Volume=/var/home/atwebb/Containers/nextcloud.atwebb.dev/caddy/config/Caddyfile:/etc/caddy/Caddyfile:Z
+
+# data files (Z=exclusive access)
+Volume=/var/home/atwebb/Containers/nextcloud.atwebb.dev/caddy/data:/data:Z
+
+# nextcloud config (z=shared access)
+Volume=/var/home/atwebb/Containers/nextcloud.atwebb.dev/nextcloud/config:/var/www/html:z
+
+Image=docker.io/library/caddy:2
+
+[Service]
+TimeoutStartSec=120

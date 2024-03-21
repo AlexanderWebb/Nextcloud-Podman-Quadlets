@@ -1,0 +1,7 @@
+[Container]
+Pod=atwebb.dev.pod
+ContainerName=mariadb
+EnvironmentFile=mariadb.env
+# sql database volume (Z=exclusive access)
+Volume=/var/home/atwebb/Containers/nextcloud.atwebb.dev/mariadb:/var/lib/mysql:Z
+Image=docker.io/library/mariadb:11

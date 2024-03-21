@@ -1,0 +1,13 @@
+[Pod]
+PodName=atwebb.dev
+PodmanArgs=--hostname atwebb.dev
+
+# Unprivileged ports for http and https
+# The router port forward will map incoming 80->7070 and 443->4430.
+# Then Podman maps it back to 80/443
+PublishPort=7070:80
+PublishPort=4430:443
+
+# Start Pod on boot
+[Install]
+WantedBy=default.target
